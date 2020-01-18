@@ -48,10 +48,12 @@ describe("First test", () => {
 
   it("should generate items then add one and then remove one", () => {
     const k8sClient = new K8SClientMock(`${mockFolder}/get-all-mock.yml`);
+    const watcher = { watch: () => undefined, unwatch: () => undefined };
     const synchronizer = new sync.Synchronizer({
       client: k8sClient,
       outputFolder,
-      namespace: "default"
+      namespace: "default",
+      watcher
     });
 
     // normal items

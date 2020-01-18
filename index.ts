@@ -1,20 +1,16 @@
 import * as fs from "fs-extra";
 
-import * as shell from "shelljs";
-import * as yaml from "js-yaml";
-import * as k8s from "@kubernetes/client-node";
 import * as _ from "lodash";
 import * as chokidar from "chokidar";
 
-import * as item from "./item";
 import * as log from "./log";
 import * as kubectl from "./kubectl";
 import * as sync from "./synchronizer";
+import * as watcher from "./watcher";
 
 const interval = 5000;
 const outputFolder = "cluster";
 const namespace = "default";
-const itemsMap = {};
 
 if (fs.existsSync(outputFolder)) {
   fs.removeSync(outputFolder);
@@ -22,18 +18,31 @@ if (fs.existsSync(outputFolder)) {
 
 fs.mkdirSync(outputFolder);
 
-// const watcher = chokidar.watch("cluster");
-
-const k8sClient = {
+const K8SClient = {
   all: kubectl.all,
   apply: kubectl.apply,
   remove: kubectl.remove
 };
 
+const watcherObj = new watcher.Watcher(outputFolder);
+
+watcherObj.onRemove((path: string) => {
+  const filePath = `${__dirname}/${path}`;
+  log.message(`deleting item: ${filePath}`);
+  K8SClient.remove(filePath);
+});
+
+watcherObj.onCreate((path: string) => {
+  const filePath = `${__dirname}/${path}`;
+  log.message(`creating item: ${filePath}`);
+  K8SClient.apply(filePath);
+});
+
 const synchronizer = new sync.Synchronizer({
-  client: k8sClient,
+  client: K8SClient,
   outputFolder,
-  namespace
+  namespace,
+  watcher: watcherObj
 });
 
 setInterval(() => synchronizer.sync(), interval);

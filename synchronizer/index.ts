@@ -8,30 +8,43 @@ export interface K8SClient {
   remove(path: string): string;
 }
 
+export interface Watcher {
+  watch: () => void;
+  unwatch: () => void;
+}
+
 export class Synchronizer {
   client: K8SClient;
   outputFolder: string;
   namespace: string;
   currentItems: { [key: string]: item.Item };
+  watcher: Watcher;
 
   constructor(init: {
     client: K8SClient;
     outputFolder: string;
     namespace: string;
+    watcher: Watcher;
   }) {
     this.client = init.client;
     this.outputFolder = init.outputFolder;
     this.namespace = init.namespace;
+    this.watcher = init.watcher;
   }
 
   sync() {
     const items = this.client.all(this.namespace);
+
+    this.watcher.unwatch();
 
     const itemsChanged = item.createOrUpdateAll(items, this.outputFolder);
 
     const unupdatedItems = this.unupdatedItems(itemsChanged);
 
     const itemsRemoved = item.removeAll(unupdatedItems);
+
+    this.watcher.watch();
+
     this.updateCurrentItems(items);
   }
 
@@ -48,9 +61,11 @@ export class Synchronizer {
   }
 
   private unupdatedItems(latestItems: string[]): string[] {
-    return _.chain(this.currentItems)
-      .keys()
-      .filter(name => !_.find(latestItems, iName => iName === name))
-      .value();
+    const currentItems = item.names(this.outputFolder);
+
+    return _.filter(
+      currentItems,
+      name => !_.find(latestItems, iName => iName === name)
+    );
   }
 }
