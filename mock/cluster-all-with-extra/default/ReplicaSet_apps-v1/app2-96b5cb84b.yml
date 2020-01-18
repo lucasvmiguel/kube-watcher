@@ -1,0 +1,57 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  annotations:
+    deployment.kubernetes.io/desired-replicas: '1'
+    deployment.kubernetes.io/max-replicas: '2'
+    deployment.kubernetes.io/revision: '1'
+    kubectl.kubernetes.io/last-applied-configuration: >
+      {"apiVersion":"apps/v1","kind":"ReplicaSet","metadata":{"annotations":{"deployment.kubernetes.io/desired-replicas":"1","deployment.kubernetes.io/max-replicas":"2","deployment.kubernetes.io/revision":"1"},"creationTimestamp":"2019-12-02T21:45:47Z","generation":2,"labels":{"app":"app2","pod-template-hash":"96b5cb84b"},"name":"app2-96b5cb84b","namespace":"default","ownerReferences":[{"apiVersion":"apps/v1","blockOwnerDeletion":true,"controller":true,"kind":"Deployment","name":"app2","uid":"a1f3792e-821b-4f80-b9b9-bcc631d68e07"}],"resourceVersion":"2207","selfLink":"/apis/apps/v1/namespaces/default/replicasets/app2-96b5cb84b","uid":"809c390d-d82f-4315-9c32-db7987cca7d5"},"spec":{"replicas":0,"selector":{"matchLabels":{"app":"app2","pod-template-hash":"96b5cb84b"}},"template":{"metadata":{"creationTimestamp":null,"labels":{"app":"app2","pod-template-hash":"96b5cb84b"}},"spec":{"containers":[{"image":"nginx:1.2","imagePullPolicy":"IfNotPresent","name":"nginx","ports":[{"containerPort":8080,"protocol":"TCP"}],"resources":{},"terminationMessagePath":"/dev/termination-log","terminationMessagePolicy":"File"}],"dnsPolicy":"ClusterFirst","restartPolicy":"Always","schedulerName":"default-scheduler","securityContext":{},"terminationGracePeriodSeconds":30}}},"status":{"observedGeneration":2,"replicas":0}}
+  creationTimestamp: '2019-12-02T21:45:47Z'
+  generation: 2
+  labels:
+    app: app2
+    pod-template-hash: 96b5cb84b
+  name: app2-96b5cb84b
+  namespace: default
+  ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: Deployment
+      name: app2
+      uid: a1f3792e-821b-4f80-b9b9-bcc631d68e07
+  resourceVersion: '16898'
+  selfLink: /apis/apps/v1/namespaces/default/replicasets/app2-96b5cb84b
+  uid: 809c390d-d82f-4315-9c32-db7987cca7d5
+spec:
+  replicas: 0
+  selector:
+    matchLabels:
+      app: app2
+      pod-template-hash: 96b5cb84b
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: app2
+        pod-template-hash: 96b5cb84b
+    spec:
+      containers:
+        - image: 'nginx:1.2'
+          imagePullPolicy: IfNotPresent
+          name: nginx
+          ports:
+            - containerPort: 8080
+              protocol: TCP
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+status:
+  observedGeneration: 2
+  replicas: 0

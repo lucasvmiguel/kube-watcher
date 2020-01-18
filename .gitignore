@@ -1,2 +1,4 @@
 node_modules
 cluster
+test/cluster-test
+test.yml

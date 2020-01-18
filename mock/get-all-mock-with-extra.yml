@@ -1,0 +1,1030 @@
+apiVersion: v1
+items:
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"v1","kind":"Pod","metadata":{"annotations":{},"creationTimestamp":"2019-12-02T21:48:19Z","generateName":"app1-ffcd69dbb-","labels":{"app":"app1","pod-template-hash":"ffcd69dbb"},"name":"app1-ffcd69dbb-tcpw8","namespace":"default","ownerReferences":[{"apiVersion":"apps/v1","blockOwnerDeletion":true,"controller":true,"kind":"ReplicaSet","name":"app1-ffcd69dbb","uid":"48e467b4-ca85-4952-8229-057c789e745d"}],"resourceVersion":"6108","selfLink":"/api/v1/namespaces/default/pods/app1-ffcd69dbb-tcpw8","uid":"91b38550-a9c8-4dcd-bf0e-11fb9552c11b"},"spec":{"containers":[{"image":"nginx:1.7","imagePullPolicy":"IfNotPresent","name":"nginx","ports":[{"containerPort":8080,"protocol":"TCP"}],"resources":{},"terminationMessagePath":"/dev/termination-log","terminationMessagePolicy":"File","volumeMounts":[{"mountPath":"/var/run/secrets/kubernetes.io/serviceaccount","name":"default-token-gxpwh","readOnly":true}]}],"dnsPolicy":"ClusterFirst","enableServiceLinks":true,"nodeName":"minikube","priority":0,"restartPolicy":"Always","schedulerName":"default-scheduler","securityContext":{},"serviceAccount":"default","serviceAccountName":"default","terminationGracePeriodSeconds":30,"tolerations":[{"effect":"NoExecute","key":"node.kubernetes.io/not-ready","operator":"Exists","tolerationSeconds":300},{"effect":"NoExecute","key":"node.kubernetes.io/unreachable","operator":"Exists","tolerationSeconds":300}],"volumes":[{"name":"default-token-gxpwh","secret":{"defaultMode":420,"secretName":"default-token-gxpwh"}}]},"status":{"conditions":[{"lastProbeTime":null,"lastTransitionTime":"2019-12-02T21:48:19Z","status":"True","type":"Initialized"},{"lastProbeTime":null,"lastTransitionTime":"2020-01-17T18:58:49Z","status":"True","type":"Ready"},{"lastProbeTime":null,"lastTransitionTime":"2020-01-17T18:58:49Z","status":"True","type":"ContainersReady"},{"lastProbeTime":null,"lastTransitionTime":"2019-12-02T21:48:19Z","status":"True","type":"PodScheduled"}],"containerStatuses":[{"containerID":"docker://422b71f35a5e2d9534d1128108e3052942baa6d7ca93732486f543d742dd0de9","image":"nginx:1.7","imageID":"docker-pullable://nginx@sha256:02537b932a849103ab21c75fac25c0de622ca12fe2c5ba8af2c7cb23339ee6d4","lastState":{"terminated":{"containerID":"docker://3b5b3f20a4c3d7caa80e8c01eb6b4fad4d5b3d7d9ae21626f3b35596fcdf1109","exitCode":0,"finishedAt":"2019-12-02T21:49:08Z","reason":"Completed","startedAt":"2019-12-02T21:48:32Z"}},"name":"nginx","ready":true,"restartCount":1,"started":true,"state":{"running":{"startedAt":"2020-01-17T18:58:48Z"}}}],"hostIP":"192.168.64.2","phase":"Running","podIP":"172.17.0.3","podIPs":[{"ip":"172.17.0.3"}],"qosClass":"BestEffort","startTime":"2019-12-02T21:48:19Z"}}
+    creationTimestamp: "2019-12-02T21:48:19Z"
+    generateName: app1-ffcd69dbb-
+    labels:
+      app: app1
+      pod-template-hash: ffcd69dbb
+    name: app1-ffcd69dbb-tcpw8
+    namespace: default
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: ReplicaSet
+      name: app1-ffcd69dbb
+      uid: 48e467b4-ca85-4952-8229-057c789e745d
+    resourceVersion: "17901"
+    selfLink: /api/v1/namespaces/default/pods/app1-ffcd69dbb-tcpw8
+    uid: 91b38550-a9c8-4dcd-bf0e-11fb9552c11b
+  spec:
+    containers:
+    - image: nginx:1.7
+      imagePullPolicy: IfNotPresent
+      name: nginx
+      ports:
+      - containerPort: 8080
+        protocol: TCP
+      resources: {}
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: default-token-gxpwh
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    enableServiceLinks: true
+    nodeName: minikube
+    priority: 0
+    restartPolicy: Always
+    schedulerName: default-scheduler
+    securityContext: {}
+    serviceAccount: default
+    serviceAccountName: default
+    terminationGracePeriodSeconds: 30
+    tolerations:
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+    volumes:
+    - name: default-token-gxpwh
+      secret:
+        defaultMode: 420
+        secretName: default-token-gxpwh
+  status:
+    conditions:
+    - lastProbeTime: null
+      lastTransitionTime: "2019-12-02T21:48:19Z"
+      status: "True"
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: "2020-01-18T12:20:11Z"
+      status: "True"
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: "2020-01-18T12:20:11Z"
+      status: "True"
+      type: ContainersReady
+    - lastProbeTime: null
+      lastTransitionTime: "2019-12-02T21:48:19Z"
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - containerID: docker://c6c9543aad3a018d26afb6729db775b3f949937523128da9924f2c5ae8a3f108
+      image: nginx:1.7
+      imageID: docker-pullable://nginx@sha256:02537b932a849103ab21c75fac25c0de622ca12fe2c5ba8af2c7cb23339ee6d4
+      lastState:
+        terminated:
+          containerID: docker://422b71f35a5e2d9534d1128108e3052942baa6d7ca93732486f543d742dd0de9
+          exitCode: 0
+          finishedAt: "2020-01-17T23:07:12Z"
+          reason: Completed
+          startedAt: "2020-01-17T18:58:48Z"
+      name: nginx
+      ready: true
+      restartCount: 2
+      started: true
+      state:
+        running:
+          startedAt: "2020-01-18T12:20:11Z"
+    hostIP: 192.168.64.2
+    phase: Running
+    podIP: 172.17.0.4
+    podIPs:
+    - ip: 172.17.0.4
+    qosClass: BestEffort
+    startTime: "2019-12-02T21:48:19Z"
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"v1","kind":"Pod","metadata":{"annotations":{},"creationTimestamp":"2019-12-02T21:48:14Z","generateName":"app2-5b6989ff86-","labels":{"app":"app2","pod-template-hash":"5b6989ff86"},"name":"app2-5b6989ff86-k5jcn","namespace":"default","ownerReferences":[{"apiVersion":"apps/v1","blockOwnerDeletion":true,"controller":true,"kind":"ReplicaSet","name":"app2-5b6989ff86","uid":"4c71db85-6e88-4720-99f6-8ea6d176f743"}],"resourceVersion":"6096","selfLink":"/api/v1/namespaces/default/pods/app2-5b6989ff86-k5jcn","uid":"0c795871-992b-41bc-81d1-830211205037"},"spec":{"containers":[{"image":"nginx:1.17","imagePullPolicy":"IfNotPresent","name":"nginx","ports":[{"containerPort":8080,"protocol":"TCP"}],"resources":{},"terminationMessagePath":"/dev/termination-log","terminationMessagePolicy":"File","volumeMounts":[{"mountPath":"/var/run/secrets/kubernetes.io/serviceaccount","name":"default-token-gxpwh","readOnly":true}]}],"dnsPolicy":"ClusterFirst","enableServiceLinks":true,"nodeName":"minikube","priority":0,"restartPolicy":"Always","schedulerName":"default-scheduler","securityContext":{},"serviceAccount":"default","serviceAccountName":"default","terminationGracePeriodSeconds":30,"tolerations":[{"effect":"NoExecute","key":"node.kubernetes.io/not-ready","operator":"Exists","tolerationSeconds":300},{"effect":"NoExecute","key":"node.kubernetes.io/unreachable","operator":"Exists","tolerationSeconds":300}],"volumes":[{"name":"default-token-gxpwh","secret":{"defaultMode":420,"secretName":"default-token-gxpwh"}}]},"status":{"conditions":[{"lastProbeTime":null,"lastTransitionTime":"2019-12-02T21:48:14Z","status":"True","type":"Initialized"},{"lastProbeTime":null,"lastTransitionTime":"2020-01-17T18:58:49Z","status":"True","type":"Ready"},{"lastProbeTime":null,"lastTransitionTime":"2020-01-17T18:58:49Z","status":"True","type":"ContainersReady"},{"lastProbeTime":null,"lastTransitionTime":"2019-12-02T21:48:14Z","status":"True","type":"PodScheduled"}],"containerStatuses":[{"containerID":"docker://7176201b75410108fe5f021021a39d9b01e2bc0d021bbcc815d4b1fc0d7f51d3","image":"nginx:1.17","imageID":"docker-pullable://nginx@sha256:50cf965a6e08ec5784009d0fccb380fc479826b6e0e65684d9879170a9df8566","lastState":{"terminated":{"containerID":"docker://91d6684df4a5234479d3ff0d8627130d5d1df85720d7fc883e105886d6624697","exitCode":0,"finishedAt":"2019-12-02T21:49:09Z","reason":"Completed","startedAt":"2019-12-02T21:48:24Z"}},"name":"nginx","ready":true,"restartCount":1,"started":true,"state":{"running":{"startedAt":"2020-01-17T18:58:48Z"}}}],"hostIP":"192.168.64.2","phase":"Running","podIP":"172.17.0.2","podIPs":[{"ip":"172.17.0.2"}],"qosClass":"BestEffort","startTime":"2019-12-02T21:48:14Z"}}
+    creationTimestamp: "2019-12-02T21:48:14Z"
+    generateName: app2-5b6989ff86-
+    labels:
+      app: app2
+      pod-template-hash: 5b6989ff86
+    name: app2-5b6989ff86-k5jcn
+    namespace: default
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: ReplicaSet
+      name: app2-5b6989ff86
+      uid: 4c71db85-6e88-4720-99f6-8ea6d176f743
+    resourceVersion: "17894"
+    selfLink: /api/v1/namespaces/default/pods/app2-5b6989ff86-k5jcn
+    uid: 0c795871-992b-41bc-81d1-830211205037
+  spec:
+    containers:
+    - image: nginx:1.17
+      imagePullPolicy: IfNotPresent
+      name: nginx
+      ports:
+      - containerPort: 8080
+        protocol: TCP
+      resources: {}
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: default-token-gxpwh
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    enableServiceLinks: true
+    nodeName: minikube
+    priority: 0
+    restartPolicy: Always
+    schedulerName: default-scheduler
+    securityContext: {}
+    serviceAccount: default
+    serviceAccountName: default
+    terminationGracePeriodSeconds: 30
+    tolerations:
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+    volumes:
+    - name: default-token-gxpwh
+      secret:
+        defaultMode: 420
+        secretName: default-token-gxpwh
+  status:
+    conditions:
+    - lastProbeTime: null
+      lastTransitionTime: "2019-12-02T21:48:14Z"
+      status: "True"
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: "2020-01-18T12:20:11Z"
+      status: "True"
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: "2020-01-18T12:20:11Z"
+      status: "True"
+      type: ContainersReady
+    - lastProbeTime: null
+      lastTransitionTime: "2019-12-02T21:48:14Z"
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - containerID: docker://55c3fa41282db7e220e8d961a083da7c1697c29cc279c6cc2acdaac6d9559ff3
+      image: nginx:1.17
+      imageID: docker-pullable://nginx@sha256:50cf965a6e08ec5784009d0fccb380fc479826b6e0e65684d9879170a9df8566
+      lastState:
+        terminated:
+          containerID: docker://7176201b75410108fe5f021021a39d9b01e2bc0d021bbcc815d4b1fc0d7f51d3
+          exitCode: 0
+          finishedAt: "2020-01-17T23:07:13Z"
+          reason: Completed
+          startedAt: "2020-01-17T18:58:48Z"
+      name: nginx
+      ready: true
+      restartCount: 2
+      started: true
+      state:
+        running:
+          startedAt: "2020-01-18T12:20:11Z"
+    hostIP: 192.168.64.2
+    phase: Running
+    podIP: 172.17.0.5
+    podIPs:
+    - ip: 172.17.0.5
+    qosClass: BestEffort
+    startTime: "2019-12-02T21:48:14Z"
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    creationTimestamp: "2020-01-18T12:42:04Z"
+    generateName: nginx-deployment-54f57cf6bf-
+    labels:
+      app: nginx
+      pod-template-hash: 54f57cf6bf
+    name: nginx-deployment-54f57cf6bf-ds9rq
+    namespace: default
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: ReplicaSet
+      name: nginx-deployment-54f57cf6bf
+      uid: 84069de9-ee50-4506-8cbe-ff0b6b5ce3e7
+    resourceVersion: "19529"
+    selfLink: /api/v1/namespaces/default/pods/nginx-deployment-54f57cf6bf-ds9rq
+    uid: 0af4c87e-9ae2-4a68-8977-bb91cd6ef8a0
+  spec:
+    containers:
+    - image: nginx:1.7.9
+      imagePullPolicy: IfNotPresent
+      name: nginx
+      ports:
+      - containerPort: 80
+        protocol: TCP
+      resources: {}
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: default-token-gxpwh
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    enableServiceLinks: true
+    nodeName: minikube
+    priority: 0
+    restartPolicy: Always
+    schedulerName: default-scheduler
+    securityContext: {}
+    serviceAccount: default
+    serviceAccountName: default
+    terminationGracePeriodSeconds: 30
+    tolerations:
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+    volumes:
+    - name: default-token-gxpwh
+      secret:
+        defaultMode: 420
+        secretName: default-token-gxpwh
+  status:
+    conditions:
+    - lastProbeTime: null
+      lastTransitionTime: "2020-01-18T12:42:05Z"
+      status: "True"
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: "2020-01-18T12:42:06Z"
+      status: "True"
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: "2020-01-18T12:42:06Z"
+      status: "True"
+      type: ContainersReady
+    - lastProbeTime: null
+      lastTransitionTime: "2020-01-18T12:42:04Z"
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - containerID: docker://0cfd9004e76cee8f185fa7c7b9f3e4086cfb7eb8e3c40ae174a976adc21becc4
+      image: nginx:1.7.9
+      imageID: docker-pullable://nginx@sha256:e3456c851a152494c3e4ff5fcc26f240206abac0c9d794affb40e0714846c451
+      lastState: {}
+      name: nginx
+      ready: true
+      restartCount: 0
+      started: true
+      state:
+        running:
+          startedAt: "2020-01-18T12:42:06Z"
+    hostIP: 192.168.64.2
+    phase: Running
+    podIP: 172.17.0.6
+    podIPs:
+    - ip: 172.17.0.6
+    qosClass: BestEffort
+    startTime: "2020-01-18T12:42:05Z"
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    creationTimestamp: "2020-01-18T12:42:04Z"
+    generateName: nginx-deployment-54f57cf6bf-
+    labels:
+      app: nginx
+      pod-template-hash: 54f57cf6bf
+    name: nginx-deployment-54f57cf6bf-rg8mn
+    namespace: default
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: ReplicaSet
+      name: nginx-deployment-54f57cf6bf
+      uid: 84069de9-ee50-4506-8cbe-ff0b6b5ce3e7
+    resourceVersion: "19532"
+    selfLink: /api/v1/namespaces/default/pods/nginx-deployment-54f57cf6bf-rg8mn
+    uid: 62ef80e4-e204-4609-b593-78e052da3c6f
+  spec:
+    containers:
+    - image: nginx:1.7.9
+      imagePullPolicy: IfNotPresent
+      name: nginx
+      ports:
+      - containerPort: 80
+        protocol: TCP
+      resources: {}
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: default-token-gxpwh
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    enableServiceLinks: true
+    nodeName: minikube
+    priority: 0
+    restartPolicy: Always
+    schedulerName: default-scheduler
+    securityContext: {}
+    serviceAccount: default
+    serviceAccountName: default
+    terminationGracePeriodSeconds: 30
+    tolerations:
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+    volumes:
+    - name: default-token-gxpwh
+      secret:
+        defaultMode: 420
+        secretName: default-token-gxpwh
+  status:
+    conditions:
+    - lastProbeTime: null
+      lastTransitionTime: "2020-01-18T12:42:05Z"
+      status: "True"
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: "2020-01-18T12:42:06Z"
+      status: "True"
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: "2020-01-18T12:42:06Z"
+      status: "True"
+      type: ContainersReady
+    - lastProbeTime: null
+      lastTransitionTime: "2020-01-18T12:42:04Z"
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - containerID: docker://5ea1220be696a127e00debedba6a91fa5c0d934c61bdd12edb855cec00d4b6cc
+      image: nginx:1.7.9
+      imageID: docker-pullable://nginx@sha256:e3456c851a152494c3e4ff5fcc26f240206abac0c9d794affb40e0714846c451
+      lastState: {}
+      name: nginx
+      ready: true
+      restartCount: 0
+      started: true
+      state:
+        running:
+          startedAt: "2020-01-18T12:42:06Z"
+    hostIP: 192.168.64.2
+    phase: Running
+    podIP: 172.17.0.7
+    podIPs:
+    - ip: 172.17.0.7
+    qosClass: BestEffort
+    startTime: "2020-01-18T12:42:05Z"
+- apiVersion: v1
+  kind: Service
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{},"creationTimestamp":"2019-12-02T21:41:18Z","name":"app1","namespace":"default","resourceVersion":"1802","selfLink":"/api/v1/namespaces/default/services/app1","uid":"82d05182-bc31-4373-8e15-50b93a4c69bf"},"spec":{"clusterIP":"10.100.160.220","ports":[{"port":8080,"protocol":"TCP","targetPort":80}],"selector":{"app":"app1"},"sessionAffinity":"None","type":"ClusterIP"},"status":{"loadBalancer":{}}}
+    creationTimestamp: "2019-12-02T21:41:18Z"
+    name: app1
+    namespace: default
+    resourceVersion: "16880"
+    selfLink: /api/v1/namespaces/default/services/app1
+    uid: 82d05182-bc31-4373-8e15-50b93a4c69bf
+  spec:
+    clusterIP: 10.100.160.220
+    ports:
+    - port: 8080
+      protocol: TCP
+      targetPort: 80
+    selector:
+      app: app1
+    sessionAffinity: None
+    type: ClusterIP
+  status:
+    loadBalancer: {}
+- apiVersion: v1
+  kind: Service
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{},"creationTimestamp":"2019-12-02T21:45:47Z","name":"app2","namespace":"default","resourceVersion":"1933","selfLink":"/api/v1/namespaces/default/services/app2","uid":"3794002c-dda3-423c-8d80-3d4fc4becc90"},"spec":{"clusterIP":"10.104.246.180","ports":[{"port":8080,"protocol":"TCP","targetPort":80}],"selector":{"app":"app2"},"sessionAffinity":"None","type":"ClusterIP"},"status":{"loadBalancer":{}}}
+    creationTimestamp: "2019-12-02T21:45:47Z"
+    name: app2
+    namespace: default
+    resourceVersion: "16882"
+    selfLink: /api/v1/namespaces/default/services/app2
+    uid: 3794002c-dda3-423c-8d80-3d4fc4becc90
+  spec:
+    clusterIP: 10.104.246.180
+    ports:
+    - port: 8080
+      protocol: TCP
+      targetPort: 80
+    selector:
+      app: app2
+    sessionAffinity: None
+    type: ClusterIP
+  status:
+    loadBalancer: {}
+- apiVersion: v1
+  kind: Service
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{},"creationTimestamp":"2019-12-02T21:25:41Z","labels":{"component":"apiserver","provider":"kubernetes"},"name":"kubernetes","namespace":"default","resourceVersion":"148","selfLink":"/api/v1/namespaces/default/services/kubernetes","uid":"c30f5316-8b11-45ce-b139-eecaeefe4dd9"},"spec":{"clusterIP":"10.96.0.1","ports":[{"name":"https","port":443,"protocol":"TCP","targetPort":8443}],"sessionAffinity":"None","type":"ClusterIP"},"status":{"loadBalancer":{}}}
+    creationTimestamp: "2019-12-02T21:25:41Z"
+    labels:
+      component: apiserver
+      provider: kubernetes
+    name: kubernetes
+    namespace: default
+    resourceVersion: "16884"
+    selfLink: /api/v1/namespaces/default/services/kubernetes
+    uid: c30f5316-8b11-45ce-b139-eecaeefe4dd9
+  spec:
+    clusterIP: 10.96.0.1
+    ports:
+    - name: https
+      port: 443
+      protocol: TCP
+      targetPort: 8443
+    sessionAffinity: None
+    type: ClusterIP
+  status:
+    loadBalancer: {}
+- apiVersion: apps/v1
+  kind: Deployment
+  metadata:
+    annotations:
+      deployment.kubernetes.io/revision: "4"
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"apps/v1","kind":"Deployment","metadata":{"annotations":{"deployment.kubernetes.io/revision":"4"},"creationTimestamp":"2019-12-02T21:41:18Z","generation":5,"name":"app1","namespace":"default","resourceVersion":"6112","selfLink":"/apis/apps/v1/namespaces/default/deployments/app1","uid":"1b57807e-80ec-4698-a5ff-0d9f0bb6a1e4"},"spec":{"progressDeadlineSeconds":600,"replicas":1,"revisionHistoryLimit":10,"selector":{"matchLabels":{"app":"app1"}},"strategy":{"rollingUpdate":{"maxSurge":"25%","maxUnavailable":"25%"},"type":"RollingUpdate"},"template":{"metadata":{"creationTimestamp":null,"labels":{"app":"app1"}},"spec":{"containers":[{"image":"nginx:1.7","imagePullPolicy":"IfNotPresent","name":"nginx","ports":[{"containerPort":8080,"protocol":"TCP"}],"resources":{},"terminationMessagePath":"/dev/termination-log","terminationMessagePolicy":"File"}],"dnsPolicy":"ClusterFirst","restartPolicy":"Always","schedulerName":"default-scheduler","securityContext":{},"terminationGracePeriodSeconds":30}}},"status":{"availableReplicas":1,"conditions":[{"lastTransitionTime":"2019-12-02T21:41:18Z","lastUpdateTime":"2019-12-02T21:48:33Z","message":"ReplicaSet \"app1-ffcd69dbb\" has successfully progressed.","reason":"NewReplicaSetAvailable","status":"True","type":"Progressing"},{"lastTransitionTime":"2020-01-17T20:23:11Z","lastUpdateTime":"2020-01-17T20:23:11Z","message":"Deployment has minimum availability.","reason":"MinimumReplicasAvailable","status":"True","type":"Available"}],"observedGeneration":5,"readyReplicas":1,"replicas":1,"updatedReplicas":1}}
+    creationTimestamp: "2019-12-02T21:41:18Z"
+    generation: 6
+    name: app1
+    namespace: default
+    resourceVersion: "16886"
+    selfLink: /apis/apps/v1/namespaces/default/deployments/app1
+    uid: 1b57807e-80ec-4698-a5ff-0d9f0bb6a1e4
+  spec:
+    progressDeadlineSeconds: 600
+    replicas: 1
+    revisionHistoryLimit: 10
+    selector:
+      matchLabels:
+        app: app1
+    strategy:
+      rollingUpdate:
+        maxSurge: 25%
+        maxUnavailable: 25%
+      type: RollingUpdate
+    template:
+      metadata:
+        creationTimestamp: null
+        labels:
+          app: app1
+      spec:
+        containers:
+        - image: nginx:1.7
+          imagePullPolicy: IfNotPresent
+          name: nginx
+          ports:
+          - containerPort: 8080
+            protocol: TCP
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+        dnsPolicy: ClusterFirst
+        restartPolicy: Always
+        schedulerName: default-scheduler
+        securityContext: {}
+        terminationGracePeriodSeconds: 30
+  status:
+    availableReplicas: 1
+    conditions:
+    - lastTransitionTime: "2019-12-02T21:41:18Z"
+      lastUpdateTime: "2019-12-02T21:48:33Z"
+      message: ReplicaSet "app1-ffcd69dbb" has successfully progressed.
+      reason: NewReplicaSetAvailable
+      status: "True"
+      type: Progressing
+    - lastTransitionTime: "2020-01-17T20:23:11Z"
+      lastUpdateTime: "2020-01-17T20:23:11Z"
+      message: Deployment has minimum availability.
+      reason: MinimumReplicasAvailable
+      status: "True"
+      type: Available
+    observedGeneration: 6
+    readyReplicas: 1
+    replicas: 1
+    updatedReplicas: 1
+- apiVersion: apps/v1
+  kind: Deployment
+  metadata:
+    annotations:
+      deployment.kubernetes.io/revision: "2"
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"apps/v1","kind":"Deployment","metadata":{"annotations":{"deployment.kubernetes.io/revision":"2"},"creationTimestamp":"2019-12-02T21:45:47Z","generation":2,"name":"app2","namespace":"default","resourceVersion":"6099","selfLink":"/apis/apps/v1/namespaces/default/deployments/app2","uid":"a1f3792e-821b-4f80-b9b9-bcc631d68e07"},"spec":{"progressDeadlineSeconds":600,"replicas":1,"revisionHistoryLimit":10,"selector":{"matchLabels":{"app":"app2"}},"strategy":{"rollingUpdate":{"maxSurge":"25%","maxUnavailable":"25%"},"type":"RollingUpdate"},"template":{"metadata":{"creationTimestamp":null,"labels":{"app":"app2"}},"spec":{"containers":[{"image":"nginx:1.17","imagePullPolicy":"IfNotPresent","name":"nginx","ports":[{"containerPort":8080,"protocol":"TCP"}],"resources":{},"terminationMessagePath":"/dev/termination-log","terminationMessagePolicy":"File"}],"dnsPolicy":"ClusterFirst","restartPolicy":"Always","schedulerName":"default-scheduler","securityContext":{},"terminationGracePeriodSeconds":30}}},"status":{"availableReplicas":1,"conditions":[{"lastTransitionTime":"2019-12-02T21:45:47Z","lastUpdateTime":"2019-12-02T21:48:25Z","message":"ReplicaSet \"app2-5b6989ff86\" has successfully progressed.","reason":"NewReplicaSetAvailable","status":"True","type":"Progressing"},{"lastTransitionTime":"2020-01-17T20:23:09Z","lastUpdateTime":"2020-01-17T20:23:09Z","message":"Deployment has minimum availability.","reason":"MinimumReplicasAvailable","status":"True","type":"Available"}],"observedGeneration":2,"readyReplicas":1,"replicas":1,"updatedReplicas":1}}
+    creationTimestamp: "2019-12-02T21:45:47Z"
+    generation: 3
+    name: app2
+    namespace: default
+    resourceVersion: "16889"
+    selfLink: /apis/apps/v1/namespaces/default/deployments/app2
+    uid: a1f3792e-821b-4f80-b9b9-bcc631d68e07
+  spec:
+    progressDeadlineSeconds: 600
+    replicas: 1
+    revisionHistoryLimit: 10
+    selector:
+      matchLabels:
+        app: app2
+    strategy:
+      rollingUpdate:
+        maxSurge: 25%
+        maxUnavailable: 25%
+      type: RollingUpdate
+    template:
+      metadata:
+        creationTimestamp: null
+        labels:
+          app: app2
+      spec:
+        containers:
+        - image: nginx:1.17
+          imagePullPolicy: IfNotPresent
+          name: nginx
+          ports:
+          - containerPort: 8080
+            protocol: TCP
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+        dnsPolicy: ClusterFirst
+        restartPolicy: Always
+        schedulerName: default-scheduler
+        securityContext: {}
+        terminationGracePeriodSeconds: 30
+  status:
+    availableReplicas: 1
+    conditions:
+    - lastTransitionTime: "2019-12-02T21:45:47Z"
+      lastUpdateTime: "2019-12-02T21:48:25Z"
+      message: ReplicaSet "app2-5b6989ff86" has successfully progressed.
+      reason: NewReplicaSetAvailable
+      status: "True"
+      type: Progressing
+    - lastTransitionTime: "2020-01-17T20:23:09Z"
+      lastUpdateTime: "2020-01-17T20:23:09Z"
+      message: Deployment has minimum availability.
+      reason: MinimumReplicasAvailable
+      status: "True"
+      type: Available
+    observedGeneration: 3
+    readyReplicas: 1
+    replicas: 1
+    updatedReplicas: 1
+- apiVersion: apps/v1
+  kind: Deployment
+  metadata:
+    annotations:
+      deployment.kubernetes.io/revision: "1"
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"apps/v1","kind":"Deployment","metadata":{"annotations":{},"name":"nginx-deployment","namespace":"default"},"spec":{"replicas":2,"selector":{"matchLabels":{"app":"nginx"}},"template":{"metadata":{"labels":{"app":"nginx"}},"spec":{"containers":[{"image":"nginx:1.7.9","name":"nginx","ports":[{"containerPort":80}]}]}}}}
+    creationTimestamp: "2020-01-18T12:42:04Z"
+    generation: 1
+    name: nginx-deployment
+    namespace: default
+    resourceVersion: "19534"
+    selfLink: /apis/apps/v1/namespaces/default/deployments/nginx-deployment
+    uid: 062f5a80-7d4f-4315-8b97-74c375d33d2d
+  spec:
+    progressDeadlineSeconds: 600
+    replicas: 2
+    revisionHistoryLimit: 10
+    selector:
+      matchLabels:
+        app: nginx
+    strategy:
+      rollingUpdate:
+        maxSurge: 25%
+        maxUnavailable: 25%
+      type: RollingUpdate
+    template:
+      metadata:
+        creationTimestamp: null
+        labels:
+          app: nginx
+      spec:
+        containers:
+        - image: nginx:1.7.9
+          imagePullPolicy: IfNotPresent
+          name: nginx
+          ports:
+          - containerPort: 80
+            protocol: TCP
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+        dnsPolicy: ClusterFirst
+        restartPolicy: Always
+        schedulerName: default-scheduler
+        securityContext: {}
+        terminationGracePeriodSeconds: 30
+  status:
+    availableReplicas: 2
+    conditions:
+    - lastTransitionTime: "2020-01-18T12:42:06Z"
+      lastUpdateTime: "2020-01-18T12:42:06Z"
+      message: Deployment has minimum availability.
+      reason: MinimumReplicasAvailable
+      status: "True"
+      type: Available
+    - lastTransitionTime: "2020-01-18T12:42:04Z"
+      lastUpdateTime: "2020-01-18T12:42:06Z"
+      message: ReplicaSet "nginx-deployment-54f57cf6bf" has successfully progressed.
+      reason: NewReplicaSetAvailable
+      status: "True"
+      type: Progressing
+    observedGeneration: 1
+    readyReplicas: 2
+    replicas: 2
+    updatedReplicas: 2
+- apiVersion: apps/v1
+  kind: ReplicaSet
+  metadata:
+    annotations:
+      deployment.kubernetes.io/desired-replicas: "1"
+      deployment.kubernetes.io/max-replicas: "2"
+      deployment.kubernetes.io/revision: "3"
+      deployment.kubernetes.io/revision-history: "1"
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"apps/v1","kind":"ReplicaSet","metadata":{"annotations":{"deployment.kubernetes.io/desired-replicas":"1","deployment.kubernetes.io/max-replicas":"2","deployment.kubernetes.io/revision":"3","deployment.kubernetes.io/revision-history":"1"},"creationTimestamp":"2019-12-02T21:41:18Z","generation":2,"labels":{"app":"app1","pod-template-hash":"5569b5bb59"},"name":"app1-5569b5bb59","namespace":"default","ownerReferences":[{"apiVersion":"apps/v1","blockOwnerDeletion":true,"controller":true,"kind":"Deployment","name":"app1","uid":"1b57807e-80ec-4698-a5ff-0d9f0bb6a1e4"}],"resourceVersion":"2233","selfLink":"/apis/apps/v1/namespaces/default/replicasets/app1-5569b5bb59","uid":"5ab352cb-a4ef-4f34-84fd-ea48c13bd128"},"spec":{"replicas":0,"selector":{"matchLabels":{"app":"app1","pod-template-hash":"5569b5bb59"}},"template":{"metadata":{"creationTimestamp":null,"labels":{"app":"app1","pod-template-hash":"5569b5bb59"}},"spec":{"containers":[{"image":"nginx:1.7.9","imagePullPolicy":"IfNotPresent","name":"nginx","ports":[{"containerPort":8080,"protocol":"TCP"}],"resources":{},"terminationMessagePath":"/dev/termination-log","terminationMessagePolicy":"File"}],"dnsPolicy":"ClusterFirst","restartPolicy":"Always","schedulerName":"default-scheduler","securityContext":{},"terminationGracePeriodSeconds":30}}},"status":{"observedGeneration":2,"replicas":0}}
+    creationTimestamp: "2019-12-02T21:41:18Z"
+    generation: 2
+    labels:
+      app: app1
+      pod-template-hash: 5569b5bb59
+    name: app1-5569b5bb59
+    namespace: default
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: Deployment
+      name: app1
+      uid: 1b57807e-80ec-4698-a5ff-0d9f0bb6a1e4
+    resourceVersion: "16891"
+    selfLink: /apis/apps/v1/namespaces/default/replicasets/app1-5569b5bb59
+    uid: 5ab352cb-a4ef-4f34-84fd-ea48c13bd128
+  spec:
+    replicas: 0
+    selector:
+      matchLabels:
+        app: app1
+        pod-template-hash: 5569b5bb59
+    template:
+      metadata:
+        creationTimestamp: null
+        labels:
+          app: app1
+          pod-template-hash: 5569b5bb59
+      spec:
+        containers:
+        - image: nginx:1.7.9
+          imagePullPolicy: IfNotPresent
+          name: nginx
+          ports:
+          - containerPort: 8080
+            protocol: TCP
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+        dnsPolicy: ClusterFirst
+        restartPolicy: Always
+        schedulerName: default-scheduler
+        securityContext: {}
+        terminationGracePeriodSeconds: 30
+  status:
+    observedGeneration: 2
+    replicas: 0
+- apiVersion: apps/v1
+  kind: ReplicaSet
+  metadata:
+    annotations:
+      deployment.kubernetes.io/desired-replicas: "1"
+      deployment.kubernetes.io/max-replicas: "2"
+      deployment.kubernetes.io/revision: "2"
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"apps/v1","kind":"ReplicaSet","metadata":{"annotations":{"deployment.kubernetes.io/desired-replicas":"1","deployment.kubernetes.io/max-replicas":"2","deployment.kubernetes.io/revision":"2"},"creationTimestamp":"2019-12-02T21:45:26Z","generation":2,"labels":{"app":"app1","pod-template-hash":"7b4fbcb59c"},"name":"app1-7b4fbcb59c","namespace":"default","ownerReferences":[{"apiVersion":"apps/v1","blockOwnerDeletion":true,"controller":true,"kind":"Deployment","name":"app1","uid":"1b57807e-80ec-4698-a5ff-0d9f0bb6a1e4"}],"resourceVersion":"5069","selfLink":"/apis/apps/v1/namespaces/default/replicasets/app1-7b4fbcb59c","uid":"8e78af1c-6f1f-4954-b287-f962f7175bed"},"spec":{"replicas":0,"selector":{"matchLabels":{"app":"app1","pod-template-hash":"7b4fbcb59c"}},"template":{"metadata":{"creationTimestamp":null,"labels":{"app":"app1","pod-template-hash":"7b4fbcb59c"}},"spec":{"containers":[{"image":"nginx:1.2","imagePullPolicy":"IfNotPresent","name":"nginx","ports":[{"containerPort":8080,"protocol":"TCP"}],"resources":{},"terminationMessagePath":"/dev/termination-log","terminationMessagePolicy":"File"}],"dnsPolicy":"ClusterFirst","restartPolicy":"Always","schedulerName":"default-scheduler","securityContext":{},"terminationGracePeriodSeconds":30}}},"status":{"observedGeneration":2,"replicas":0}}
+    creationTimestamp: "2019-12-02T21:45:26Z"
+    generation: 2
+    labels:
+      app: app1
+      pod-template-hash: 7b4fbcb59c
+    name: app1-7b4fbcb59c
+    namespace: default
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: Deployment
+      name: app1
+      uid: 1b57807e-80ec-4698-a5ff-0d9f0bb6a1e4
+    resourceVersion: "16892"
+    selfLink: /apis/apps/v1/namespaces/default/replicasets/app1-7b4fbcb59c
+    uid: 8e78af1c-6f1f-4954-b287-f962f7175bed
+  spec:
+    replicas: 0
+    selector:
+      matchLabels:
+        app: app1
+        pod-template-hash: 7b4fbcb59c
+    template:
+      metadata:
+        creationTimestamp: null
+        labels:
+          app: app1
+          pod-template-hash: 7b4fbcb59c
+      spec:
+        containers:
+        - image: nginx:1.2
+          imagePullPolicy: IfNotPresent
+          name: nginx
+          ports:
+          - containerPort: 8080
+            protocol: TCP
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+        dnsPolicy: ClusterFirst
+        restartPolicy: Always
+        schedulerName: default-scheduler
+        securityContext: {}
+        terminationGracePeriodSeconds: 30
+  status:
+    observedGeneration: 2
+    replicas: 0
+- apiVersion: apps/v1
+  kind: ReplicaSet
+  metadata:
+    annotations:
+      deployment.kubernetes.io/desired-replicas: "1"
+      deployment.kubernetes.io/max-replicas: "2"
+      deployment.kubernetes.io/revision: "4"
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"apps/v1","kind":"ReplicaSet","metadata":{"annotations":{"deployment.kubernetes.io/desired-replicas":"1","deployment.kubernetes.io/max-replicas":"2","deployment.kubernetes.io/revision":"4"},"creationTimestamp":"2019-12-02T21:48:19Z","generation":1,"labels":{"app":"app1","pod-template-hash":"ffcd69dbb"},"name":"app1-ffcd69dbb","namespace":"default","ownerReferences":[{"apiVersion":"apps/v1","blockOwnerDeletion":true,"controller":true,"kind":"Deployment","name":"app1","uid":"1b57807e-80ec-4698-a5ff-0d9f0bb6a1e4"}],"resourceVersion":"6110","selfLink":"/apis/apps/v1/namespaces/default/replicasets/app1-ffcd69dbb","uid":"48e467b4-ca85-4952-8229-057c789e745d"},"spec":{"replicas":1,"selector":{"matchLabels":{"app":"app1","pod-template-hash":"ffcd69dbb"}},"template":{"metadata":{"creationTimestamp":null,"labels":{"app":"app1","pod-template-hash":"ffcd69dbb"}},"spec":{"containers":[{"image":"nginx:1.7","imagePullPolicy":"IfNotPresent","name":"nginx","ports":[{"containerPort":8080,"protocol":"TCP"}],"resources":{},"terminationMessagePath":"/dev/termination-log","terminationMessagePolicy":"File"}],"dnsPolicy":"ClusterFirst","restartPolicy":"Always","schedulerName":"default-scheduler","securityContext":{},"terminationGracePeriodSeconds":30}}},"status":{"availableReplicas":1,"fullyLabeledReplicas":1,"observedGeneration":1,"readyReplicas":1,"replicas":1}}
+    creationTimestamp: "2019-12-02T21:48:19Z"
+    generation: 1
+    labels:
+      app: app1
+      pod-template-hash: ffcd69dbb
+    name: app1-ffcd69dbb
+    namespace: default
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: Deployment
+      name: app1
+      uid: 1b57807e-80ec-4698-a5ff-0d9f0bb6a1e4
+    resourceVersion: "16894"
+    selfLink: /apis/apps/v1/namespaces/default/replicasets/app1-ffcd69dbb
+    uid: 48e467b4-ca85-4952-8229-057c789e745d
+  spec:
+    replicas: 1
+    selector:
+      matchLabels:
+        app: app1
+        pod-template-hash: ffcd69dbb
+    template:
+      metadata:
+        creationTimestamp: null
+        labels:
+          app: app1
+          pod-template-hash: ffcd69dbb
+      spec:
+        containers:
+        - image: nginx:1.7
+          imagePullPolicy: IfNotPresent
+          name: nginx
+          ports:
+          - containerPort: 8080
+            protocol: TCP
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+        dnsPolicy: ClusterFirst
+        restartPolicy: Always
+        schedulerName: default-scheduler
+        securityContext: {}
+        terminationGracePeriodSeconds: 30
+  status:
+    availableReplicas: 1
+    fullyLabeledReplicas: 1
+    observedGeneration: 1
+    readyReplicas: 1
+    replicas: 1
+- apiVersion: apps/v1
+  kind: ReplicaSet
+  metadata:
+    annotations:
+      deployment.kubernetes.io/desired-replicas: "1"
+      deployment.kubernetes.io/max-replicas: "2"
+      deployment.kubernetes.io/revision: "2"
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"apps/v1","kind":"ReplicaSet","metadata":{"annotations":{"deployment.kubernetes.io/desired-replicas":"1","deployment.kubernetes.io/max-replicas":"2","deployment.kubernetes.io/revision":"2"},"creationTimestamp":"2019-12-02T21:48:14Z","generation":1,"labels":{"app":"app2","pod-template-hash":"5b6989ff86"},"name":"app2-5b6989ff86","namespace":"default","ownerReferences":[{"apiVersion":"apps/v1","blockOwnerDeletion":true,"controller":true,"kind":"Deployment","name":"app2","uid":"a1f3792e-821b-4f80-b9b9-bcc631d68e07"}],"resourceVersion":"6098","selfLink":"/apis/apps/v1/namespaces/default/replicasets/app2-5b6989ff86","uid":"4c71db85-6e88-4720-99f6-8ea6d176f743"},"spec":{"replicas":1,"selector":{"matchLabels":{"app":"app2","pod-template-hash":"5b6989ff86"}},"template":{"metadata":{"creationTimestamp":null,"labels":{"app":"app2","pod-template-hash":"5b6989ff86"}},"spec":{"containers":[{"image":"nginx:1.17","imagePullPolicy":"IfNotPresent","name":"nginx","ports":[{"containerPort":8080,"protocol":"TCP"}],"resources":{},"terminationMessagePath":"/dev/termination-log","terminationMessagePolicy":"File"}],"dnsPolicy":"ClusterFirst","restartPolicy":"Always","schedulerName":"default-scheduler","securityContext":{},"terminationGracePeriodSeconds":30}}},"status":{"availableReplicas":1,"fullyLabeledReplicas":1,"observedGeneration":1,"readyReplicas":1,"replicas":1}}
+    creationTimestamp: "2019-12-02T21:48:14Z"
+    generation: 1
+    labels:
+      app: app2
+      pod-template-hash: 5b6989ff86
+    name: app2-5b6989ff86
+    namespace: default
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: Deployment
+      name: app2
+      uid: a1f3792e-821b-4f80-b9b9-bcc631d68e07
+    resourceVersion: "16895"
+    selfLink: /apis/apps/v1/namespaces/default/replicasets/app2-5b6989ff86
+    uid: 4c71db85-6e88-4720-99f6-8ea6d176f743
+  spec:
+    replicas: 1
+    selector:
+      matchLabels:
+        app: app2
+        pod-template-hash: 5b6989ff86
+    template:
+      metadata:
+        creationTimestamp: null
+        labels:
+          app: app2
+          pod-template-hash: 5b6989ff86
+      spec:
+        containers:
+        - image: nginx:1.17
+          imagePullPolicy: IfNotPresent
+          name: nginx
+          ports:
+          - containerPort: 8080
+            protocol: TCP
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+        dnsPolicy: ClusterFirst
+        restartPolicy: Always
+        schedulerName: default-scheduler
+        securityContext: {}
+        terminationGracePeriodSeconds: 30
+  status:
+    availableReplicas: 1
+    fullyLabeledReplicas: 1
+    observedGeneration: 1
+    readyReplicas: 1
+    replicas: 1
+- apiVersion: apps/v1
+  kind: ReplicaSet
+  metadata:
+    annotations:
+      deployment.kubernetes.io/desired-replicas: "1"
+      deployment.kubernetes.io/max-replicas: "2"
+      deployment.kubernetes.io/revision: "1"
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"apps/v1","kind":"ReplicaSet","metadata":{"annotations":{"deployment.kubernetes.io/desired-replicas":"1","deployment.kubernetes.io/max-replicas":"2","deployment.kubernetes.io/revision":"1"},"creationTimestamp":"2019-12-02T21:45:47Z","generation":2,"labels":{"app":"app2","pod-template-hash":"96b5cb84b"},"name":"app2-96b5cb84b","namespace":"default","ownerReferences":[{"apiVersion":"apps/v1","blockOwnerDeletion":true,"controller":true,"kind":"Deployment","name":"app2","uid":"a1f3792e-821b-4f80-b9b9-bcc631d68e07"}],"resourceVersion":"2207","selfLink":"/apis/apps/v1/namespaces/default/replicasets/app2-96b5cb84b","uid":"809c390d-d82f-4315-9c32-db7987cca7d5"},"spec":{"replicas":0,"selector":{"matchLabels":{"app":"app2","pod-template-hash":"96b5cb84b"}},"template":{"metadata":{"creationTimestamp":null,"labels":{"app":"app2","pod-template-hash":"96b5cb84b"}},"spec":{"containers":[{"image":"nginx:1.2","imagePullPolicy":"IfNotPresent","name":"nginx","ports":[{"containerPort":8080,"protocol":"TCP"}],"resources":{},"terminationMessagePath":"/dev/termination-log","terminationMessagePolicy":"File"}],"dnsPolicy":"ClusterFirst","restartPolicy":"Always","schedulerName":"default-scheduler","securityContext":{},"terminationGracePeriodSeconds":30}}},"status":{"observedGeneration":2,"replicas":0}}
+    creationTimestamp: "2019-12-02T21:45:47Z"
+    generation: 2
+    labels:
+      app: app2
+      pod-template-hash: 96b5cb84b
+    name: app2-96b5cb84b
+    namespace: default
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: Deployment
+      name: app2
+      uid: a1f3792e-821b-4f80-b9b9-bcc631d68e07
+    resourceVersion: "16898"
+    selfLink: /apis/apps/v1/namespaces/default/replicasets/app2-96b5cb84b
+    uid: 809c390d-d82f-4315-9c32-db7987cca7d5
+  spec:
+    replicas: 0
+    selector:
+      matchLabels:
+        app: app2
+        pod-template-hash: 96b5cb84b
+    template:
+      metadata:
+        creationTimestamp: null
+        labels:
+          app: app2
+          pod-template-hash: 96b5cb84b
+      spec:
+        containers:
+        - image: nginx:1.2
+          imagePullPolicy: IfNotPresent
+          name: nginx
+          ports:
+          - containerPort: 8080
+            protocol: TCP
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+        dnsPolicy: ClusterFirst
+        restartPolicy: Always
+        schedulerName: default-scheduler
+        securityContext: {}
+        terminationGracePeriodSeconds: 30
+  status:
+    observedGeneration: 2
+    replicas: 0
+- apiVersion: apps/v1
+  kind: ReplicaSet
+  metadata:
+    annotations:
+      deployment.kubernetes.io/desired-replicas: "2"
+      deployment.kubernetes.io/max-replicas: "3"
+      deployment.kubernetes.io/revision: "1"
+    creationTimestamp: "2020-01-18T12:42:04Z"
+    generation: 1
+    labels:
+      app: nginx
+      pod-template-hash: 54f57cf6bf
+    name: nginx-deployment-54f57cf6bf
+    namespace: default
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: Deployment
+      name: nginx-deployment
+      uid: 062f5a80-7d4f-4315-8b97-74c375d33d2d
+    resourceVersion: "19533"
+    selfLink: /apis/apps/v1/namespaces/default/replicasets/nginx-deployment-54f57cf6bf
+    uid: 84069de9-ee50-4506-8cbe-ff0b6b5ce3e7
+  spec:
+    replicas: 2
+    selector:
+      matchLabels:
+        app: nginx
+        pod-template-hash: 54f57cf6bf
+    template:
+      metadata:
+        creationTimestamp: null
+        labels:
+          app: nginx
+          pod-template-hash: 54f57cf6bf
+      spec:
+        containers:
+        - image: nginx:1.7.9
+          imagePullPolicy: IfNotPresent
+          name: nginx
+          ports:
+          - containerPort: 80
+            protocol: TCP
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+        dnsPolicy: ClusterFirst
+        restartPolicy: Always
+        schedulerName: default-scheduler
+        securityContext: {}
+        terminationGracePeriodSeconds: 30
+  status:
+    availableReplicas: 2
+    fullyLabeledReplicas: 2
+    observedGeneration: 1
+    readyReplicas: 2
+    replicas: 2
+kind: List
+metadata:
+  resourceVersion: ""
+  selfLink: ""

@@ -1,0 +1,57 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  annotations:
+    deployment.kubernetes.io/desired-replicas: '1'
+    deployment.kubernetes.io/max-replicas: '2'
+    deployment.kubernetes.io/revision: '2'
+    kubectl.kubernetes.io/last-applied-configuration: >
+      {"apiVersion":"apps/v1","kind":"ReplicaSet","metadata":{"annotations":{"deployment.kubernetes.io/desired-replicas":"1","deployment.kubernetes.io/max-replicas":"2","deployment.kubernetes.io/revision":"2"},"creationTimestamp":"2019-12-02T21:45:26Z","generation":2,"labels":{"app":"app1","pod-template-hash":"7b4fbcb59c"},"name":"app1-7b4fbcb59c","namespace":"default","ownerReferences":[{"apiVersion":"apps/v1","blockOwnerDeletion":true,"controller":true,"kind":"Deployment","name":"app1","uid":"1b57807e-80ec-4698-a5ff-0d9f0bb6a1e4"}],"resourceVersion":"5069","selfLink":"/apis/apps/v1/namespaces/default/replicasets/app1-7b4fbcb59c","uid":"8e78af1c-6f1f-4954-b287-f962f7175bed"},"spec":{"replicas":0,"selector":{"matchLabels":{"app":"app1","pod-template-hash":"7b4fbcb59c"}},"template":{"metadata":{"creationTimestamp":null,"labels":{"app":"app1","pod-template-hash":"7b4fbcb59c"}},"spec":{"containers":[{"image":"nginx:1.2","imagePullPolicy":"IfNotPresent","name":"nginx","ports":[{"containerPort":8080,"protocol":"TCP"}],"resources":{},"terminationMessagePath":"/dev/termination-log","terminationMessagePolicy":"File"}],"dnsPolicy":"ClusterFirst","restartPolicy":"Always","schedulerName":"default-scheduler","securityContext":{},"terminationGracePeriodSeconds":30}}},"status":{"observedGeneration":2,"replicas":0}}
+  creationTimestamp: '2019-12-02T21:45:26Z'
+  generation: 2
+  labels:
+    app: app1
+    pod-template-hash: 7b4fbcb59c
+  name: app1-7b4fbcb59c
+  namespace: default
+  ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: Deployment
+      name: app1
+      uid: 1b57807e-80ec-4698-a5ff-0d9f0bb6a1e4
+  resourceVersion: '16892'
+  selfLink: /apis/apps/v1/namespaces/default/replicasets/app1-7b4fbcb59c
+  uid: 8e78af1c-6f1f-4954-b287-f962f7175bed
+spec:
+  replicas: 0
+  selector:
+    matchLabels:
+      app: app1
+      pod-template-hash: 7b4fbcb59c
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: app1
+        pod-template-hash: 7b4fbcb59c
+    spec:
+      containers:
+        - image: 'nginx:1.2'
+          imagePullPolicy: IfNotPresent
+          name: nginx
+          ports:
+            - containerPort: 8080
+              protocol: TCP
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+status:
+  observedGeneration: 2
+  replicas: 0
